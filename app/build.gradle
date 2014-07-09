@@ -1,0 +1,27 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 'android-18'
+    buildToolsVersion '20.0.0'
+    defaultConfig {
+        applicationId 'com.example.syvokdei.vistimote'
+        minSdkVersion 18
+        targetSdkVersion 18
+        versionCode 1
+        versionName '1.0'
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile files('libs/estimote-sdk-preview.jar')
+    compile files('libs/estimote-sdk-preview-javadoc.jar')
+}
